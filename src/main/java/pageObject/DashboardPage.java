@@ -41,4 +41,10 @@ public class DashboardPage {
 
     @AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(resourceIdMatches(\"flar2.devcheck:id/model\"))")
     public MobileElement model;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
+    public MobileElement cancel;
+
+    @AndroidFindBy(id = "flar2.devcheck:id/info_title")
+    public MobileElement title;
 }

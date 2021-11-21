@@ -21,7 +21,7 @@ public class Test_Dashboard extends Base{
     }
 
     @Test
-    void verifySubMenus(){
+    void verifySubMenusPresent(){
         Assert.assertTrue(dashboard.battery.isDisplayed(),"Battery not present");
         Assert.assertTrue(dashboard.cpuStats.isDisplayed(),"CPU Status not present");
         Assert.assertTrue(dashboard.monitors.isDisplayed(),"Monitors not present");
@@ -31,5 +31,22 @@ public class Test_Dashboard extends Base{
         Assert.assertTrue(dashboard.temperatures.isDisplayed(),"Temperatures not present");
         Assert.assertTrue(dashboard.tools.isDisplayed(),"Tools not present");
         Assert.assertTrue(dashboard.model.isDisplayed(),"Model not present");
+    }
+
+    @Test
+    void verifySubmenusAreMatched()
+    {
+        dashboard.battery.click();
+        Assert.assertEquals(dashboard.title.getText(),"Battery","Battery menu doesnt match");
+        dashboard.cancel.click();
+        dashboard.network.click();
+        Assert.assertEquals(dashboard.title.getText(),"Network","Network menu doesnt match");
+        dashboard.cancel.click();
+        dashboard.ram.click();
+        Assert.assertEquals(dashboard.title.getText(),"Memory","Memory setting doesnt match");
+        dashboard.cancel.click();
+        dashboard.storage.click();
+        Assert.assertEquals(dashboard.title.getText(),"Storage","Storage setting doesnt match");
+        dashboard.cancel.click();
     }
 }
