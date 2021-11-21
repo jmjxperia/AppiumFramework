@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObject.DashboardPage;
@@ -48,5 +49,11 @@ public class Test_Dashboard extends Base{
         dashboard.storage.click();
         Assert.assertEquals(dashboard.title.getText(),"Storage","Storage setting doesnt match");
         dashboard.cancel.click();
+    }
+
+    @AfterTest
+    public void tearDown() {
+        Base.stop();
+        System.out.println("tear");
     }
 }

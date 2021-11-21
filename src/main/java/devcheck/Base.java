@@ -53,4 +53,10 @@ public class Base {
         return driver;
     }
 
+    public static void stop() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 }
