@@ -21,16 +21,16 @@ public class Base {
     public static AppiumDriver<MobileElement> start() throws IOException {
         Properties prop=new Properties();
         String projectPath=System.getProperty("user.dir");
-        FileInputStream fis=new FileInputStream(projectPath+"\\src\\main\\java\\resources\\config.properties");
+        FileInputStream fis=new FileInputStream(projectPath+"\\src\\main\\resources\\config.properties");
         prop.load(fis);
         String platform=prop.getProperty("platform");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         File classpathRoot = new File(System.getProperty("user.dir"));
-        File appDir = new File(classpathRoot, "\\src\\main\\java\\resources\\app\\");
+        File appDir = new File(classpathRoot, "\\src\\main\\resources\\app\\");
         File app;
         switch(platform){
             case "android":
-                app = new File (appDir, "DevCheck.apks");
+                app = new File (appDir, "DevCheck.apk");
                 capabilities.setCapability("platformName", "Android");
                 capabilities.setCapability("deviceName", "Pixel");
                 capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
