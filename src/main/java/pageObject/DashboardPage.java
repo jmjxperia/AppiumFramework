@@ -12,31 +12,31 @@ public class DashboardPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Battery']")
+    @AndroidFindBy(id = "dashboard_battery")
     public MobileElement battery;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Network']")
+    @AndroidFindBy(id="dashboard_network")
     public MobileElement network;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='RAM']")
+    @AndroidFindBy(id="dashboard_memory")
     public MobileElement ram;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Storage']")
+    @AndroidFindBy(id="dashboard_storage")
     public MobileElement storage;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='CPU Status']")
+    @AndroidFindBy(id="dashboard_cpufreqs")
     public MobileElement cpuStats;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Temperatures']")
+    @AndroidFindBy(id = "dashboard_temp_card")
     public MobileElement temperatures;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Monitors']")
+    @AndroidFindBy(id="monitor_layout")
     public MobileElement monitors;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Benchmarks']")
+    @AndroidFindBy(id="benchmark_layout")
     public MobileElement benchmarks;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Tools']")
+    @AndroidFindBy(id="tools_layout")
     public MobileElement tools;
 
     @AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(resourceIdMatches(\"flar2.devcheck:id/model\"))")
@@ -45,6 +45,6 @@ public class DashboardPage {
     @AndroidFindBy(xpath = "//android.widget.Button[@text='CANCEL']")
     public MobileElement cancel;
 
-    @AndroidFindBy(id = "flar2.devcheck:id/info_title")
+    @AndroidFindBy(id = "info_title")
     public MobileElement title;
 }
